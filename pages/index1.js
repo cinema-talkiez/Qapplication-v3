@@ -530,7 +530,7 @@ export default function Home() {
             </div>
           ) : (
             <Swiper
-              slidesPerView={3} // Default visible slides
+              slidesPerView={4} // Default visible slides
               spaceBetween={50} // Space between the slides
               loop={false} // Enable looping
               //autoplay={{ delay: 3000, disableOnInteraction: true }} // Autoplay every 3 seconds
@@ -597,7 +597,7 @@ export default function Home() {
             </div>
           ) : (
             <Swiper
-              slidesPerView={3} // Default visible slides
+              slidesPerView={4} // Default visible slides
               spaceBetween={50} // Space between the slides
               loop={false} // Disable looping
               autoplay={{ delay: 2500, disableOnInteraction: true }} // Autoplay every 3 seconds
@@ -661,7 +661,7 @@ export default function Home() {
             </div>
           ) : (
             <Swiper
-              slidesPerView={3} // Default visible slides
+              slidesPerView={4} // Default visible slides
               spaceBetween={50} // Space between the slides
               loop={false} // Disable looping
               autoplay={{ delay: 3000, disableOnInteraction: true }} // Autoplay every 3 seconds
@@ -725,7 +725,7 @@ export default function Home() {
             </div>
           ) : (
             <Swiper
-              slidesPerView={3} // Default visible slides
+              slidesPerView={4} // Default visible slides
               spaceBetween={50} // Space between the slides
               loop={false} // Disable looping
               autoplay={{ delay: 3500, disableOnInteraction: true }} // Autoplay every 3 seconds
@@ -788,7 +788,7 @@ export default function Home() {
             </div>
           ) : (
             <Swiper
-              slidesPerView={3} // Default visible slides
+              slidesPerView={4} // Default visible slides
               spaceBetween={50} // Space between the slides
               loop={false} // Disable looping
               autoplay={{ delay: 3000, disableOnInteraction: true }} // Autoplay every 3 seconds
@@ -851,7 +851,7 @@ export default function Home() {
             </div>
           ) : (
             <Swiper
-              slidesPerView={3} // Default visible slides
+              slidesPerView={4} // Default visible slides
               spaceBetween={50} // Space between the slides
               loop={false} // Disable looping
               autoplay={{ delay: 2500, disableOnInteraction: true }} // Autoplay every 3 seconds
@@ -916,7 +916,7 @@ export default function Home() {
             </div>
           ) : (
             <Swiper
-              slidesPerView={3} // Default visible slides
+              slidesPerView={4} // Default visible slides
               spaceBetween={50} // Space between the slides
               loop={false} // Disable looping
               autoplay={{ delay: 3000, disableOnInteraction: true }} // Autoplay every 3 seconds
@@ -982,7 +982,7 @@ export default function Home() {
             </div>
           ) : (
             <Swiper
-              slidesPerView={3} // Default visible slides
+              slidesPerView={4} // Default visible slides
               spaceBetween={50} // Space between the slides
               loop={false} // Disable looping
               autoplay={{ delay: 3500, disableOnInteraction: true }} // Autoplay every 3 seconds
@@ -1048,7 +1048,7 @@ export default function Home() {
             </div>
           ) : (
             <Swiper
-              slidesPerView={3} // Default visible slides
+              slidesPerView={4} // Default visible slides
               spaceBetween={50} // Space between the slides
               loop={false} // Disable looping
               autoplay={{ delay: 2500, disableOnInteraction: true }} // Autoplay every 3 seconds
@@ -1116,7 +1116,7 @@ export default function Home() {
             </div>
           ) : (
             <Swiper
-              slidesPerView={3} // Default visible slides
+              slidesPerView={4} // Default visible slides
               spaceBetween={50} // Space between the slides
               loop={false} // Disable looping
               autoplay={{ delay: 3500, disableOnInteraction: true }} // Autoplay every 3 seconds
@@ -1180,7 +1180,7 @@ export default function Home() {
             </div>
           ) : (
             <Swiper
-              slidesPerView={3} // Default visible slides
+              slidesPerView={4} // Default visible slides
               spaceBetween={50} // Space between the slides
               loop={false} // Disable looping
               autoplay={{ delay: 2500, disableOnInteraction: true }} // Autoplay every 3 seconds
@@ -1245,7 +1245,7 @@ export default function Home() {
             </div>
           ) : (
             <Swiper
-              slidesPerView={3} // Default visible slides
+              slidesPerView={4} // Default visible slides
               spaceBetween={50} // Space between the slides
               loop={false} // Disable looping
               autoplay={{ delay: 3000, disableOnInteraction: true }} // Autoplay every 3 seconds

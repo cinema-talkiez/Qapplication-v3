@@ -890,61 +890,6 @@ nav.sticky .mobile svg {
     display: none;
 }
 
-.card {
-    max-width: 200px;
-    min-width: 200px;
-    height: 360px;
-}
-
-.card a {
-    text-decoration: none;
-    color: #fff;
-}
-
-.cardimg {
-    width: 100%;
-    height: 80%;
-    border-radius: 8px;
-}
-
-.cardimg img {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.card a img:hover {
-    border: 2px solid red;
-    box-shadow: 0 0 8px white;
-}
-
-.card a .contents {
-    width: 100%;
-    height: 15%;
-    margin-top: 5px;
-}
-
-.contents h5 {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    font-weight: 500;
-    font-size: 14px;
-}
-
-.contents h6 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 13px;
-    padding: 2px 0px;
-}
-
-.contents h6 span {
-    color: rgb(255, 255, 255, .6);
-    font-weight: lighter
-}
 
 .rate {
     display: flex;
@@ -1189,13 +1134,13 @@ nav.sticky .mobile svg {
 .cardimg {
     width: 100%;
     height: 80%;
-    border-radius: 8px;
+
 }
 
 .cardimg img {
     width: 100%;
     height: 100%;
-    border-radius: 8px;
+   
     object-fit: cover;
 }
 
@@ -2005,7 +1950,7 @@ nav.sticky .mobile svg {
 .card {
     max-width: 195px;
     min-width: 195px;
-    height: 340px;
+    height: 200px;
 }
 
 .card a {
@@ -2014,15 +1959,16 @@ nav.sticky .mobile svg {
 }
 
 .cardimg {
-    width: 100%;
-    height: 80%;
-    border-radius: 8px;
+    position: relative;
+    width: 73%;
+    height: 60%;
+    
 }
 
 .cardimg img {
     width: 100%;
     height: 100%;
-    border-radius: 8px;
+   
     object-fit: cover;
 }
 
@@ -3126,6 +3072,7 @@ footer {
     font-weight: 400;
     text-align: left;
     margin: 10px;
+    margin-top: 25px;
     color: white;
     text-shadow:
         0 0 2px blue,
@@ -3162,7 +3109,7 @@ footer {
     font-weight: 400;
     text-align: left;
     margin: 10px;
-    margin-top: 25px;
+    margin-top: 10px;
     color: white;
     text-shadow:
         0 0 2px red,
@@ -3188,7 +3135,8 @@ footer {
 .card {
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
-    margin: 10px; /* Add margin to create space between cards */
+    margin: 10px;
+    margin-bottom: -80px; /* Add margin to create space between cards */
   }
   
   .card:hover {
@@ -3339,14 +3287,14 @@ footer {
     z-index: 2;
     background: rgba(0, 0, 0, 0.7); /* Overlay for better readability */
     padding: 20px 10px;
-    border-radius: 10px 10px 0 0;
+   
     text-align: center;
     color: #fff;
   }
   
   .contentflex1 {
     display: flex;
-    flex-direction: column;
+ 
     align-items: center;
   }
   
@@ -3354,15 +3302,17 @@ footer {
     width: 100px; /* Poster size */
     height: 160px;
     object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    border-radius: 10px;
+    margin-bottom: 0px;
+    margin-left: 30px;
   }
   
   .details1 h1 {
     font-size: 18px;
     margin-bottom: 25px;
-    
+    margin-left: 100px; /* Adjust as needed */
   }
+  
   
   .details1 h6 {
     font-size: 14px;
@@ -3379,11 +3329,13 @@ footer {
   }
   
   .btn_download1 {
-    position: relative;
-    bottom:15px;
-    z-index: 3;
+    position: absolute; /* Positions the button within a relatively positioned parent */
+    left: 65%; /* Move the button to the center */
+    transform: translateX(-50%); /* Adjust for perfect centering */
+    bottom: 50px;
     background-color: black;
     color: white;
+   
     padding: 5px 10px;
     border: none;
     border-radius: 5px;
@@ -3391,10 +3343,14 @@ footer {
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 5px;
     box-shadow: 0px 3px 10px #000;
     border: 2px solid white;
   }
+  
+  
+  
   .btn_download1:hover {
     background-color: white;
     color: black;

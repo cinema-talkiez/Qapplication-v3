@@ -1,123 +1,155 @@
 import useFectchData from "@/hooks/useFetchData";
-
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import "swiper/swiper-bundle.css";
 
 import Loader from "@/components/Loader";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Action() {
   const { alldata, loading } = useFectchData("/api/getmovies");
-  const [wloading, setWLoading] = useState(true);
+  const [updatedData, setUpdatedData] = useState([]);
 
   // Filter for published movies
   const publishedData = alldata?.filter((ab) => ab.status === "publish");
 
-  // Genre and category states
-  const [selectedGenre, setSelectGenre] = useState('all movies');
-  const categories = ["bollywood", "telugu", "south", "gujarati", "marvel_studio", "tv_Shows", "web_series"];
-
-
-
-  const [updatedData, setUpdatedData] = useState([]);
-
   useEffect(() => {
     if (!loading) {
-      const sortedData = publishedData.sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt));
+      const sortedData = publishedData.sort(
+        (a, b) => new Date(b.updatedAt) - new Date(a.updatedAt)
+      );
       setUpdatedData(sortedData);
     }
   }, [alldata, loading]);
 
-  // Navbar and search states
-  const [clicked, setClicked] = useState(false);
-  const [navbar, setNavbar] = useState(false);
-  const [searchbar, setSearchbar] = useState(false);
-
-  const [activeLink, setActiveLink] = useState("/");
-
-  // Search functionality
-  const [movieshortname, setMovieshortname] = useState("");
-  const [searchResult, setSearchResult] = useState(null);
-
-  useEffect(() => {
-    if (!movieshortname.trim()) {
-      setSearchResult([]);
-      return;
-    }
-
-    const filteredMovies = publishedData.filter((movie) =>
-      movie.title.toLowerCase().includes(movieshortname.toLowerCase())
-    );
-
-    setSearchResult(filteredMovies);
-  }, [movieshortname]);
-
-
-  const searchRef = useRef(null);
-
-  const handleClickOutside = (event) => {
-    if (searchRef.current && !searchRef.current.contains(event.target)) {
-      setMovieshortname("");
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  });
-
-
-
-  // Navbar handling
-
-  // Search bar handling
-
-  const scrollContainerRef = useRef(null);
-  const [isMouseDown, setIsMouseDown] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-
-
-
-
-
-
-
   return (
     <>
-    <h1 className="logo4">Horror</h1>
-<section className="genremoviesec">
-  <div className="genremovie">
-    {loading ? (
-      <Loader />
-    ) : (
-      // Render the mapped movies
-      publishedData
-        .filter((movie) => movie.genre.includes("horror")) // Filter adventure/action movies
-        .map((movie) => (
-          <div key={movie.slug} className="mcard">
-            <Link href={`/movies/${movie.slug}`}>
-              <div className="cardimg">
-                <img src={movie.smposter} alt={movie.title} loading="lazy" />
-              </div>
-              <div className="contents">
-                <h5>{movie.title}</h5>
-                <h6>
-                  <span>{movie.language}</span>  <span>{movie.type}</span>
-                </h6>
-              </div>
-            </Link>
-          </div>
-        ))
-    )}
-  </div>
-</section>
+      <style jsx>{`
+        .genrenamesec10 {
+          text-align: center;
+          color: white;
+        }
 
+        .genremoviesec10 {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          padding: 20px;
+          margin-top: -10px;
+        }
+
+        .genremovie10 {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 15px;
+        }
+
+        .mcard10 {
+          width: 100%;
+          max-width: 180px;
+          border-radius: 3px;
+          overflow: hidden;
+          transition: transform 0.3s;
+        }
+
+        .mcard10 a {
+          text-decoration: none;
+          color: white;
+          display: block;
+        }
+
+        .cardimg10 img {
+  width: 100%;
+  height: 200px; /* Set a fixed height */
+  object-fit: cover; 
+        }
+
+        .contents {
+          display: flex;
+          flex-direction: column;
+          padding: 10px;
+        }
+
+        /* Ensures title and language/type appear in the same row */
+        .title-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+        }
+
+        .title-container h5 {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          font-weight: 400;
+          font-size: 15px;
+          color: #fff;
+          flex-grow: 1; /* Ensures title takes up available space */
+        }
+
+        .title-container h6 {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          font-size: 13px;
+        }
+
+        .title-container h6 span {
+          color: rgba(255, 255, 255, 0.6);
+          font-weight: lighter;
+        }
+
+        /* Two cards per row on mobile */
+        @media (max-width: 600px) {
+          .genremovie10 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+          }
+
+          .mcard10 {
+            max-width: 100%;
+          }
+        }
+      `}</style>
+
+      <h1 className="logo4">Horror</h1>
+      <section className="genremoviesec10">
+        <div className="genremovie10">
+          {loading ? (
+            <Loader />
+          ) : (
+            publishedData
+              .filter((movie) => movie.genre.includes("horror")) // Filter action movies
+              .map((movie) => (
+                <div key={movie.slug} className="mcard10">
+                  <Link href={`/movies/${movie.slug}`}>
+                    <div className="cardimg10">
+                      <img
+                        src={movie.smposter}
+                        alt={movie.title}
+                        loading="lazy"
+                      />
+                    </div>
+                    <div className="contents">
+                      <div className="title-container">
+                        <h5>{movie.title}</h5>
+                        <h6>
+                          <span>{movie.language}</span>
+                          <span>{movie.type}</span>
+                        </h6>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              ))
+          )}
+        </div>
+      </section>
     </>
   );
 }
